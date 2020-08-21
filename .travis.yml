@@ -1,0 +1,7 @@
+sudo: required #should be root user
+services:
+  - docker #need to use docker as service
+before_install: #series of command to run before test to ran
+  - docker build -t nikhil133/myapp -f Dockerfile.dev .
+
+

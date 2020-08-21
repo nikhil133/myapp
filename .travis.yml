@@ -1,7 +1,11 @@
+language: node_js # specifing language else travis will use default ruby and lead to error rackfile not found
 sudo: required #should be root user
 services:
   - docker #need to use docker as service
 before_install: #series of command to run before test to ran
   - docker build -t nikhil133/myapp -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true nikhil133/myapp npm run test
 
 

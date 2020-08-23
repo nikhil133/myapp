@@ -10,4 +10,15 @@ before_install: #series of command to run before test to ran
 script:
   - docker run -e CI=true nikhil133/myapp npm run test
 
+deploy:
+  provider: elasticbeanstalk
+  region: ap-south-1
+  app: "docker-myapp"
+  env: "DockerMyapp-env"
+  bucket_name: "elasticbeanstalk-ap-south-1-562731450625"
+  bucket_path: "docker-myapp"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
 

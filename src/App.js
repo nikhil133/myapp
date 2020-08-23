@@ -6,7 +6,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        Hurray!! I have deployed node app to AWS through Travis CI
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Hurray I hav deployed myapp to aws docker travis ci
+        </p>
       </header>
     </div>
   );
